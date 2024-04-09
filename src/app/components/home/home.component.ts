@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { CommonModule } from '@angular/common';
 
@@ -77,8 +77,9 @@ export class HomeComponent {
       "discount": "36",
       "name": "MUFC Men Printed Round Neck Polyester Green T-Shirt"
     },
-
-
-
   ]
+
+  viewProduct(event: any){
+    console.log("Product View: ", event)
+  }
 }
