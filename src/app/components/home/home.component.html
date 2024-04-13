@@ -1,9 +1,10 @@
 <div class="p-8 mt-4">
+  <app-search (search)="onSearch($event)"></app-search>
   <div class="flex flex-wrap mx-8">
     @for(item of products; track item){
       <!-- {{item | json}} -->
       <div class="w-3/12 pr-2 mb-2">
-        <app-product-card [product]="item" (productEvent)="viewProduct($event)"></app-product-card>
+        <app-product-card [product]="item" (productEvent)="viewProduct($event)" ></app-product-card>
       </div>
     }
   </div>

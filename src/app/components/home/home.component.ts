@@ -1,12 +1,14 @@
 import { Component, EventEmitter } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { CommonModule } from '@angular/common';
+import { SearchComponent } from '../search/search.component';
+import { MatButton } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ProductCardComponent, CommonModule],
+  imports: [ProductCardComponent, CommonModule, SearchComponent, MatButton],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -81,5 +83,9 @@ export class HomeComponent {
 
   viewProduct(event: any){
     console.log("Product View: ", event)
+  }
+
+  onSearch(event: string){
+    console.log("From Home: ", event)
   }
 }
