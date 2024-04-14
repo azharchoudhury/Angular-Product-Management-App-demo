@@ -3,6 +3,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
 import { MatButton } from '@angular/material/button';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -81,11 +82,24 @@ export class HomeComponent {
     },
   ]
 
+  filteredProducts: any[] = [];
+
+  ngOnInit(){
+    this.filteredProducts = this.products;
+  }
+
   viewProduct(event: any){
     console.log("Product View: ", event)
   }
 
-  onSearch(event: string){
-    console.log("From Home: ", event)
+  onSearch(searchData: string){
+    console.log("From Home: ", searchData)
+
+    if(searchData){
+      this.filteredProducts = this.products.filter(product => product.name.toLowerCase().includes(searchData.toLowerCase()) || product.brand.toLowerCase().includes(searchData.toLowerCase()))
+      console.log("Filtered Product: ", this.filteredProducts)
+    }else{
+      this.filteredProducts = this.products;
+    }
   }
 }
