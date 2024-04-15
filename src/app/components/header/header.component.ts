@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <h2 class="bg-blue-400">Hello from Header</h2>
+    <h2 class="bg-blue-400 p-4 w-full">Hello from Header</h2>
   `,
   styles: ``
 })
